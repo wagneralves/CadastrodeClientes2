@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal">
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txvID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="7"
+                android:layout_marginLeft="8dp"
+                android:gravity="top"
+                android:text="@string/txvID_model"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="20"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/contato" />
+
+            <TextView
+                android:id="@+id/txvNome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="30"
+                android:layout_gravity="left|center_horizontal"
+                android:layout_marginLeft="20dp"
+                android:text="@string/txvNomeModel"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="3dp">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="20"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/phone" />
+
+            <TextView
+                android:id="@+id/txvTelefone"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_column="30"
+                android:layout_gravity="left|center_horizontal"
+                android:layout_marginLeft="20dp"
+                android:text="@string/TXVTelefoneModel"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="3dp">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="7"
+                android:text="      "
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="20"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/email" />
+
+            <TextView
+                android:id="@+id/txvEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="30"
+                android:layout_gravity="left|center_horizontal"
+                android:layout_marginLeft="20dp"
+                android:text="@string/txvEmailModel"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="3dp">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="7"
+                android:text="      "
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <ImageView
+                android:id="@+id/imageView18"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_column="20"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/cpf" />
+
+            <TextView
+                android:id="@+id/txvCPF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="30"
+                android:layout_gravity="left"
+                android:layout_marginLeft="20dp"
+                android:text="Medium Text"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="3dp">
+
+            <ImageView
+                android:id="@+id/imageView19"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_column="20"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/calendario" />
+
+            <TextView
+                android:id="@+id/txvDATA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="30"
+                android:layout_gravity="left"
+                android:layout_marginLeft="20dp"
+                android:text="Medium Text"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="3dp">
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="20"
+                android:layout_gravity="left|center_vertical"
+                android:layout_marginTop="1dp"
+                android:src="@drawable/info" />
+
+            <TextView
+                android:id="@+id/txvDescricao"
+                android:layout_width="137dp"
+                android:layout_height="wrap_content"
+                android:layout_column="30"
+                android:layout_gravity="left|bottom|center_horizontal"
+                android:layout_marginLeft="15dp"
+                android:layout_weight="0.03"
+                android:gravity="left"
+                android:text="@string/txvDescricaoModel"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="3dp">
+
+
+            <ImageView
+                android:id="@+id/imageView20"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_column="20"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="3dp"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/obs" />
+
+            <TextView
+                android:id="@+id/txvObs"
+                android:layout_width="218dp"
+                android:layout_height="96dp"
+                android:layout_column="30"
+                android:layout_marginLeft="20dp"
+                android:hint="@string/obs"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+
+        </TableRow>
+
+    </TableLayout>
+
+</LinearLayout>
