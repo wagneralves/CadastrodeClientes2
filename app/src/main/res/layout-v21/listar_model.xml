@@ -15,15 +15,14 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="4dp"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="34dp"
+        android:layout_marginTop="40dp"
         android:gravity="top|center_vertical|center"
         android:text="@string/txvID_model"
         android:textAppearance="@android:style/TextAppearance.Material.Small"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_conversion_absoluteHeight="19dp"
-        tools:layout_conversion_absoluteWidth="50dp"
-        tools:ignore="NewApi" />
+        tools:layout_conversion_absoluteWidth="50dp" />
 
     <ImageView
         android:id="@+id/iv"
@@ -31,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="4dp"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="13dp"
         android:src="@drawable/contato"
         app:layout_constraintStart_toEndOf="@+id/txvID"
         app:layout_constraintTop_toTopOf="parent"
@@ -46,6 +45,7 @@
         android:layout_marginLeft="4dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
         android:text="@string/txvNomeModel"
         android:textAppearance="?android:attr/textAppearanceLarge"
         app:layout_constraintEnd_toEndOf="parent"
@@ -103,6 +103,7 @@
         android:id="@+id/txvEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="3dp"
         android:layout_marginRight="8dp"
@@ -110,25 +111,12 @@
         android:layout_marginTop="2dp"
         android:text="@string/txvEmailModel"
         android:textAppearance="?android:attr/textAppearanceMedium"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/txvTelefone"
         tools:layout_conversion_absoluteHeight="20dp"
         tools:layout_conversion_absoluteWidth="105dp" />
-
-    <ImageView
-        android:id="@+id/imageView21"
-        android:layout_width="551dp"
-        android:layout_height="15dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txvEmail"
-        android:src="@drawable/separador" />
 
 
 </android.support.constraint.ConstraintLayout>
