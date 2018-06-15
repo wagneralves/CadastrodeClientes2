@@ -32,6 +32,8 @@ public class ListarActivity extends Activity {
     android.app.AlertDialog.Builder msg;
     Intent it;
     AlertDialog alerta;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,10 +43,13 @@ public class ListarActivity extends Activity {
         bancoController crud = new bancoController(getBaseContext());
         final Cursor cursor = crud.carregaDados();
 
-        String[] nomeCampos = new String[] {criaBanco.ID, criaBanco.NOME, criaBanco.TEL, criaBanco.CPF, criaBanco.DATA, criaBanco.DES, criaBanco.EMAIL, criaBanco.OBS};
+      /*  String[] nomeCampos = new String[] {criaBanco.ID, criaBanco.NOME, criaBanco.TEL, criaBanco.CPF, criaBanco.DATA, criaBanco.DES, criaBanco.EMAIL, criaBanco.OBS};
         int[] idViews = new int[] {R.id.txvID, R.id.txvNome, R.id.txvTelefone, R.id.txvCPF, R.id.txvDATA, R.id.txvDescricao, R.id.txvEmail, R.id.txvObs};
+*/
+        String[] nomeCampos = new String[] {criaBanco.ID, criaBanco.NOME, criaBanco.TEL,criaBanco.EMAIL, criaBanco.CPF, criaBanco.DATA, criaBanco.DES, criaBanco.OBS};
+        int[] idViews = new int[] {R.id.txvID, R.id.txvNome, R.id.txvTelefone, R.id.txvEmail};
 
-        SimpleCursorAdapter adaptador = new SimpleCursorAdapter(getBaseContext(),
+        final SimpleCursorAdapter adaptador = new SimpleCursorAdapter(getBaseContext(),
                 R.layout.listar_model,cursor,nomeCampos,idViews, 0);
         ltwDados = (ListView)findViewById(R.id.ltwDados);
         ltwDados.setAdapter(adaptador);
@@ -55,12 +60,27 @@ public class ListarActivity extends Activity {
                 String codigo;
                 cursor.moveToPosition(position);
                 codigo = cursor.getString(cursor.getColumnIndexOrThrow(criaBanco.ID));
-                Intent intent = new Intent(ListarActivity.this, Editar.class);
+                Intent intent = new Intent(ListarActivity.this, ExibeContato.class);
                 intent.putExtra("codigo", codigo);
                 startActivity(intent);
                 finish();
             }
         });
+
+  ltwDados.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+      @Override
+      public boolean onItemLongClick(AdapterView<?> adapterView, View view, int position, long l) {
+          String codigo;
+          cursor.moveToPosition(position);
+          codigo = cursor.getString(cursor.getColumnIndexOrThrow(criaBanco.ID));
+          Intent intent = new Intent(ListarActivity.this, Editar.class);
+          intent.putExtra("codigo", codigo);
+          startActivity(intent);
+          finish();
+          return true;
+      }
+  });
+
 
     }
 
@@ -287,5 +307,7 @@ public class ListarActivity extends Activity {
         startActivity(Intent.createChooser(it, getString(R.string.javaCompartilhar)));
 
     }
+
+
 
 }

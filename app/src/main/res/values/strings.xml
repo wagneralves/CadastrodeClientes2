@@ -5,7 +5,7 @@
     <string name="TXTTelefoneCadastro">Telefone:</string>
     <string name="TXTEmailCadastro">E-mail:</string>
     <string name="txtDescricaoCadastro">Descrição:</string>
-    <string name="txvID_model">medium</string>
+    <string name="txvID_model">n</string>
     <string name="txvNomeModel">Large Text</string>
     <string name="TXVTelefoneModel">Medium Text</string>
     <string name="txvEmailModel">Medium Text</string>

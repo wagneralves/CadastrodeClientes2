@@ -124,7 +124,9 @@
     <orderEntry type="library" name="Gradle: __local_aars__:C.\Users\wagner.alves\Desktop\Projetos\CadastrodeClientes2\app\libs\opencsv-2.3.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-v4-22.1.1" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:C.\Users\wagner.alves\Desktop\Projetos\CadastrodeClientes2\app\libs\AdBuddiz-3.0.3.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.android.support.constraint:constraint-layout-1.1.2" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-annotations:22.1.1@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:appcompat-v7-22.1.1" level="project" />
+    <orderEntry type="library" name="Gradle: com.android.support.constraint:constraint-layout-solver:1.1.2@jar" level="project" />
   </component>
 </module>
