@@ -12,37 +12,27 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
+
 public class criaBanco extends SQLiteOpenHelper {
 
-    public static final String db = "clientes.db";
-    public static final String TABELA = "clientes";
-    public static final String ID = "_id";
-    public static final String NOME = "nome";
-    public static final String TEL = "telefone";
-    public static final String CPF = "cpf";
-    public static final String DATA = "data";
-    public static final String DES = "descricao";
-    public static final String EMAIL = "email";
-    public static final String OBS = "obs";
-    private static final int VERSAO = 1;
 
 
     public criaBanco(Context context){
-        super(context, db,null,VERSAO);
+        super(context, DBTableConfig.db,null,DBTableConfig.VERSAO);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        String sql = "CREATE TABLE IF NOT EXISTS " + TABELA +"("
-                + ID + " integer primary key autoincrement,"
-                + NOME + " VARCHAR(30),"
-                + TEL + " VARCHAR(30),"
-                + CPF + " VARCHAR(30),"
-                + DATA + " DATE,"
-                + DES + " VARCHAR(200),"
-                + EMAIL + " VARCHAR(30)"
-                //  + OBS + " VARCHAR(500)"
+        String sql = "CREATE TABLE IF NOT EXISTS " + DBTableConfig.TABELA +"("
+                + DBTableConfig.Columns.ID + " integer primary key autoincrement,"
+                + DBTableConfig.Columns.NOME + " VARCHAR(30),"
+                + DBTableConfig.Columns.TEL + " VARCHAR(30),"
+                + DBTableConfig.Columns.CPF + " VARCHAR(30),"
+                + DBTableConfig.Columns.DATA + " DATE,"
+                + DBTableConfig.Columns.DES + " VARCHAR(200),"
+                + DBTableConfig.Columns.EMAIL + " VARCHAR(30)"
+                //+ DBTableConfig.Columns.OBS + " VARCHAR(500)"
                 +")";
 
 
@@ -60,13 +50,13 @@ public class criaBanco extends SQLiteOpenHelper {
         if (!exists) {
 
             db.execSQL(sql);
-            db.execSQL("ALTER TABLE " + TABELA + " ADD COLUMN" + " obs"  + " VARCHAR(500)");
+            db.execSQL("ALTER TABLE " + DBTableConfig.TABELA + " ADD COLUMN" + " obs"  + " VARCHAR(500)");
 
         }else{
 
             Backup();
             db.execSQL(sql);
-            db.execSQL("ALTER TABLE " + TABELA + " ADD COLUMN" + " obs"  + " VARCHAR(500)");
+            db.execSQL("ALTER TABLE " + DBTableConfig.TABELA + " ADD COLUMN" + " obs"  + " VARCHAR(500)");
             Restore();
 
         }
@@ -74,7 +64,7 @@ public class criaBanco extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        //db.execSQL("DROP TABLE IF EXISTS " + TABELA);
+        //db.execSQL("DROP TABLE IF EXISTS " + DBTableConfig.TABELA);
         // If you need to add a column
         if (newVersion > oldVersion) {
             db.execSQL("ALTER TABLE clientes ADD COLUMN obs VARCHAR(500)");

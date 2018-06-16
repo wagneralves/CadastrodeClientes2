@@ -1,5 +1,6 @@
 package br.com.wagner.cadastrodeclientes;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -48,7 +49,7 @@ public class ListarActivity extends Activity {
       /*  String[] nomeCampos = new String[] {criaBanco.ID, criaBanco.NOME, criaBanco.TEL, criaBanco.CPF, criaBanco.DATA, criaBanco.DES, criaBanco.EMAIL, criaBanco.OBS};
         int[] idViews = new int[] {R.id.txvID, R.id.txvNome, R.id.txvTelefone, R.id.txvCPF, R.id.txvDATA, R.id.txvDescricao, R.id.txvEmail, R.id.txvObs};
 */
-        String[] nomeCampos = new String[] {criaBanco.ID, criaBanco.NOME, criaBanco.TEL,criaBanco.EMAIL, criaBanco.CPF, criaBanco.DATA, criaBanco.DES, criaBanco.OBS};
+        String[] nomeCampos = new String[] {DBTableConfig.Columns.ID, DBTableConfig.Columns.NOME, DBTableConfig.Columns.TEL,DBTableConfig.Columns.EMAIL, DBTableConfig.Columns.CPF, DBTableConfig.Columns.DATA, DBTableConfig.Columns.DES, DBTableConfig.Columns.OBS};
         int[] idViews = new int[] {R.id.txvID, R.id.txvNome, R.id.txvTelefone, R.id.txvEmail};
 
         final SimpleCursorAdapter adaptador = new SimpleCursorAdapter(getBaseContext(),
@@ -61,7 +62,7 @@ public class ListarActivity extends Activity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String codigo;
                 cursor.moveToPosition(position);
-                codigo = cursor.getString(cursor.getColumnIndexOrThrow(criaBanco.ID));
+                codigo = cursor.getString(cursor.getColumnIndexOrThrow(DBTableConfig.Columns.ID));
                 Intent intent = new Intent(ListarActivity.this, ExibeContato.class);
                 intent.putExtra("codigo", codigo);
                 startActivity(intent);
@@ -74,7 +75,7 @@ public class ListarActivity extends Activity {
       public boolean onItemLongClick(AdapterView<?> adapterView, View view, int position, long l) {
           String codigo;
           cursor.moveToPosition(position);
-          codigo = cursor.getString(cursor.getColumnIndexOrThrow(criaBanco.ID));
+          codigo = cursor.getString(cursor.getColumnIndexOrThrow(DBTableConfig.Columns.ID));
           Intent intent = new Intent(ListarActivity.this, Editar.class);
           intent.putExtra("codigo", codigo);
           startActivity(intent);
@@ -312,6 +313,7 @@ public class ListarActivity extends Activity {
     private Toast toast;
     private long lastBackPressTime = 0;
 
+    @SuppressLint("WrongConstant")
     @Override
     public void onBackPressed() {
         if (this.lastBackPressTime < System.currentTimeMillis() - 4000) {

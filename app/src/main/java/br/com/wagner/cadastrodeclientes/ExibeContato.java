@@ -36,13 +36,13 @@ public class ExibeContato extends Activity {
         exObs = (TextView) findViewById(R.id.txvExObs);
 
         cursor = crud.carregaDadoById(Integer.parseInt(codigo));
-        exNome.setText(cursor.getString(cursor.getColumnIndexOrThrow(criaBanco.NOME)));
-        exTelefone.setText(cursor.getString(cursor.getColumnIndexOrThrow(criaBanco.TEL)));
-        exCpf.setText(cursor.getString(cursor.getColumnIndexOrThrow(criaBanco.CPF)));
-        exData.setText(cursor.getString(cursor.getColumnIndexOrThrow(criaBanco.DATA)));
-        exDesc.setText(cursor.getString(cursor.getColumnIndexOrThrow(criaBanco.DES)));
-        exEmail.setText(cursor.getString(cursor.getColumnIndexOrThrow(criaBanco.EMAIL)));
-        exObs.setText(cursor.getString(cursor.getColumnIndexOrThrow(criaBanco.OBS)));
+        exNome.setText(cursor.getString(cursor.getColumnIndexOrThrow(DBTableConfig.Columns.NOME)));
+        exTelefone.setText(cursor.getString(cursor.getColumnIndexOrThrow(DBTableConfig.Columns.TEL)));
+        exCpf.setText(cursor.getString(cursor.getColumnIndexOrThrow(DBTableConfig.Columns.CPF)));
+        exData.setText(cursor.getString(cursor.getColumnIndexOrThrow(DBTableConfig.Columns.DATA)));
+        exDesc.setText(cursor.getString(cursor.getColumnIndexOrThrow(DBTableConfig.Columns.DES)));
+        exEmail.setText(cursor.getString(cursor.getColumnIndexOrThrow(DBTableConfig.Columns.EMAIL)));
+        exObs.setText(cursor.getString(cursor.getColumnIndexOrThrow(DBTableConfig.Columns.OBS)));
 
     }
 

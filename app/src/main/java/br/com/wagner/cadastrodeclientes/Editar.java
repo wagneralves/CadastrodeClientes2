@@ -1,5 +1,6 @@
 package br.com.wagner.cadastrodeclientes;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.app.DatePickerDialog;
@@ -71,13 +72,13 @@ public class Editar extends ActionBarActivity {
         txvDate = (TextView) findViewById(R.id.txvDate);
 
         cursor = crud.carregaDadoById(Integer.parseInt(codigo));
-        txtNome.setText(cursor.getString(cursor.getColumnIndexOrThrow(criaBanco.NOME)));
-        txtTelefone.setText(cursor.getString(cursor.getColumnIndexOrThrow(criaBanco.TEL)));
-        txtCpf.setText(cursor.getString(cursor.getColumnIndexOrThrow(criaBanco.CPF)));
-        txvDate.setText(cursor.getString(cursor.getColumnIndexOrThrow(criaBanco.DATA)));
-        txtDescricao.setText(cursor.getString(cursor.getColumnIndexOrThrow(criaBanco.DES)));
-        txtEmail.setText(cursor.getString(cursor.getColumnIndexOrThrow(criaBanco.EMAIL)));
-        edtObs.setText(cursor.getString(cursor.getColumnIndexOrThrow(criaBanco.OBS)));
+        txtNome.setText(cursor.getString(cursor.getColumnIndexOrThrow(DBTableConfig.Columns.NOME)));
+        txtTelefone.setText(cursor.getString(cursor.getColumnIndexOrThrow(DBTableConfig.Columns.TEL)));
+        txtCpf.setText(cursor.getString(cursor.getColumnIndexOrThrow(DBTableConfig.Columns.CPF)));
+        txvDate.setText(cursor.getString(cursor.getColumnIndexOrThrow(DBTableConfig.Columns.DATA)));
+        txtDescricao.setText(cursor.getString(cursor.getColumnIndexOrThrow(DBTableConfig.Columns.DES)));
+        txtEmail.setText(cursor.getString(cursor.getColumnIndexOrThrow(DBTableConfig.Columns.EMAIL)));
+        edtObs.setText(cursor.getString(cursor.getColumnIndexOrThrow(DBTableConfig.Columns.OBS)));
     }
 
 //DatePicker
@@ -144,6 +145,7 @@ public class Editar extends ActionBarActivity {
     private Toast toast;
     private long lastBackPressTime = 0;
 
+    @SuppressLint("WrongConstant")
     @Override
     public void onBackPressed() {
         if (this.lastBackPressTime < System.currentTimeMillis() - 4000) {

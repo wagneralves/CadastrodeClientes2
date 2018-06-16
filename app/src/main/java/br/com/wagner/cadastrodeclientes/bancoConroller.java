@@ -6,9 +6,9 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteCursor;
 import android.database.sqlite.SQLiteDatabase;
+import static br.com.wagner.cadastrodeclientes.DBTableConfig.TABELA;
 
 
-import static br.com.wagner.cadastrodeclientes.criaBanco.TABELA;
 
 
 class bancoController {
@@ -30,13 +30,13 @@ class bancoController {
 
         db = banco.getWritableDatabase();
         valores = new ContentValues();
-        valores.put(criaBanco.NOME, nome);
-        valores.put(criaBanco.TEL, telefone);
-        valores.put(criaBanco.CPF, cpf);
-        valores.put(criaBanco.DATA, data);
-        valores.put(criaBanco.DES, descricao);
-        valores.put(criaBanco.EMAIL, email);
-        valores.put(criaBanco.OBS, obs);
+        valores.put(DBTableConfig.Columns.NOME, nome);
+        valores.put(DBTableConfig.Columns.TEL, telefone);
+        valores.put(DBTableConfig.Columns.CPF, cpf);
+        valores.put(DBTableConfig.Columns.DATA, data);
+        valores.put(DBTableConfig.Columns.DES, descricao);
+        valores.put(DBTableConfig.Columns.EMAIL, email);
+        valores.put(DBTableConfig.Columns.OBS, obs);
 
         resultado = db.insert(TABELA, null, valores);
         db.close();
@@ -51,7 +51,7 @@ class bancoController {
 
     public Cursor carregaDados(){
         Cursor cursor;
-        String[] campos =  {banco.ID,banco.NOME,banco.TEL,banco.CPF,banco.DATA,banco.DES,banco.EMAIL,banco.OBS};
+        String[] campos =  {DBTableConfig.Columns.ID,DBTableConfig.Columns.NOME,DBTableConfig.Columns.TEL,DBTableConfig.Columns.CPF,DBTableConfig.Columns.DATA,DBTableConfig.Columns.DES,DBTableConfig.Columns.EMAIL,DBTableConfig.Columns.OBS};
         db = banco.getReadableDatabase();
         cursor = db.rawQuery("SELECT * FROM clientes ORDER BY nome ", null);
         //cursor = db.query(banco.TABELA, campos, null, null, null, null, null );
@@ -65,8 +65,8 @@ class bancoController {
 
     public Cursor carregaDadoById(int id){
         Cursor cursor;
-        String[] campos =  {banco.ID,banco.NOME,banco.TEL,banco.CPF,banco.DATA,banco.DES,banco.EMAIL,banco.OBS};
-        String where = criaBanco.ID + "=" + id;
+        String[] campos =  {DBTableConfig.Columns.ID,DBTableConfig.Columns.NOME,DBTableConfig.Columns.TEL,DBTableConfig.Columns.CPF,DBTableConfig.Columns.DATA,DBTableConfig.Columns.DES,DBTableConfig.Columns.EMAIL,DBTableConfig.Columns.OBS};
+        String where = DBTableConfig.Columns.ID + "=" + id;
         db = banco.getReadableDatabase();
         cursor = db.query(TABELA,campos,where, null, null, null, null, null);
 
@@ -81,15 +81,15 @@ class bancoController {
         ContentValues valores;
         String where;
         db = banco.getWritableDatabase();
-        where = criaBanco.ID + "=" + id;
+        where = DBTableConfig.Columns.ID + "=" + id;
         valores = new ContentValues();
-        valores.put(criaBanco.NOME, nome);
-        valores.put(criaBanco.TEL, telefone);
-        valores.put(criaBanco.CPF, cpf);
-        valores.put(criaBanco.DATA, data);
-        valores.put(criaBanco.DES, descricao);
-        valores.put(criaBanco.EMAIL, email);
-        valores.put(criaBanco.OBS, obs);
+        valores.put(DBTableConfig.Columns.NOME, nome);
+        valores.put(DBTableConfig.Columns.TEL, telefone);
+        valores.put(DBTableConfig.Columns.CPF, cpf);
+        valores.put(DBTableConfig.Columns.DATA, data);
+        valores.put(DBTableConfig.Columns.DES, descricao);
+        valores.put(DBTableConfig.Columns.EMAIL, email);
+        valores.put(DBTableConfig.Columns.OBS, obs);
 
 
         db.update(TABELA,valores,where,null);
@@ -98,7 +98,7 @@ class bancoController {
 
 
     public void deletaRegistro(int id){
-        String where = criaBanco.ID + "=" + id;
+        String where = DBTableConfig.Columns.ID + "=" + id;
         db = banco.getReadableDatabase();
         db.delete(TABELA,where,null);
         db.close();
