@@ -60,7 +60,7 @@ public class ExibeContato extends Activity {
     @Override
     public void onBackPressed() {
         if (this.lastBackPressTime < System.currentTimeMillis() - 4000) {
-            toast = Toast.makeText(this, "Pressione o botão voltar novamente para reiniciar o jogo.", 4000);
+            toast = Toast.makeText(this, "Pressione o botão voltar novamente para sair!!!.", 4000);
             toast.show();
             this.lastBackPressTime = System.currentTimeMillis();
         } else {
